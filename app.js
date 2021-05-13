@@ -3,6 +3,8 @@ const path = require('path');
 const axios = require('axios');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // set up template engine
@@ -53,4 +55,4 @@ app.use((req, res) => {
     res.render('404page.ejs');
 });
 
-app.listen(3000);
+app.listen(port);
