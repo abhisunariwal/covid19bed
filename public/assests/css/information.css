@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6e6ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/***** Navbar Styling *****/
+
+.navbar-container nav ul {
+    padding: 0;
+}
+
+.navbar-container nav ul li {
+    list-style: none;
+    border-left: 2px solid #cacae7;
+    display: inline-block;
+    padding: 0 3rem;
+    font-family: arvo;
+    font-weight: 500;
+}
+
+.navbar-container nav ul li:last-of-type {
+    border-right: 2px solid #cacae7;
+}
+
+.navbar-container nav li a {
+    color: #6969e0;
+}
+
+.navbar-container nav li a:hover {
+    color: #646480;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** Mobile Styling For Navbar ***/
+
+@media (max-width: 700px) {
+    .navbar-container nav ul li {
+        padding: 0 1rem;
+        font-size: .85rem;
+    }
+}
+
+/***** Heading Container Styling*****/
+
+.heading-container {
+    width: 58%;
+    color: #8888cf;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading-container h1 {
+    border: 1px solid #8888cf;
+    padding: 5px;
+    font-family: 'Spectral', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+
+/*** Mobile Styling For Heading Container ***/
+
+@media (max-width: 700px) {
+    .heading-container {
+        width: 80%;
+    }
+
+    .heading-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .heading-container h1 {
+        padding: 10px 10px;
+    }
+}
+
+/***** Table Container Styling *****/
+
+.table-container {
+    min-height: 40vh;
+    width: 70%;
+    margin-bottom: 50px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/*** Back Button Styling ***/
+
+.back-btn-container a {
+    text-decoration: none;
+    padding: 4px 7px;
+    font-weight: 400;
+    font-size: .9rem;
+    border: 1px solid #8888cf;
+    color: #6969be;
+}
+
+.back-btn-container a:hover {
+    box-shadow: 0 0 5px 0px #9090b9d3;
+    color: #6969be;
+}
+
+/*** Mobile Styling For Back Button ***/
+
+@media (max-width: 700px) {
+    .back-btn-container a {
+        font-size: .75rem;
+        padding: 3.5px 6px;
+    }
+}
+
+/*** Main Table Styling ***/
+
+.table-container .main-table {
+    border-collapse: collapse;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 0.9em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-container .main-table thead th {
+    background-color: #cacae7;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.table-container .main-table tbody th {
+    padding-left: 10px;
+    text-align: start;
+    font-weight: 500;
+}
+
+.table-container .main-table th,
+.table-container .main-table td {
+    padding: 8px 8px;
+}
+
+.table-container .main-table td {
+    text-align: center;
+}
+
+.table-container .main-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-container .main-table tbody tr:last-of-type {
+    border-bottom: 3px solid #cacae7;
+}
+
+.table-container .main-table tbody span.bg-blue {
+    padding: 4px 9px;
+    background-color: rgba(132, 206, 255, 0.3);
+    border-radius: 50%;
+}
+
+.table-container .main-table tbody span.bg-red {
+    padding: 4px 9px;
+    background-color: rgb(255, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.table-container .main-table tbody th .hospital-name {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+}
+
+.table-container .main-table tbody th .hospital-information {
+    font-family: 'Work Sans', sans-serif;
+    font-size: .7rem;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.table-container .main-table tbody th .hospital-information a {
+    text-decoration: none;
+    color: black;
+    margin-top: 5px;
+    margin-right: 7px;
+    padding: 2px 4px;
+    border-radius: 100000px;
+    background-color: rgba(82, 170, 253, 0.65);
+    cursor: pointer;
+}
+
+.table-container .main-table tbody th .hospital-information a:hover {
+    background-color: hsla(209, 90%, 54%, 0.700);
+}
+
+.table-container .main-table .mobile-column {
+    display: none;
+}
+
+/*** Mini Table Styling ***/
+
+.table-container .main-table .mini-table {
+    background-color: #e6e6ef;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+
+.table-container .main-table .mini-table td {
+    padding: 10px 5px 10px 0px;
+}
+
+.table-container .main-table tbody .mini-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-container .main-table tbody .mini-table tr:last-of-type {
+    border-bottom: none;
+}
+
+/*** Mobile Styling For Table ***/
+
+@media (max-width: 700px) {
+
+    .table-container {
+        width: 98%;
+        font-size: 0.85rem;
+    }
+
+    .table-container .main-table .mobile-column {
+        display: block;
+    }
+
+    .table-container .main-table .desktop-column {
+        display: none;
+    }
+
+    .table-container .main-table tbody th .hospital-information {
+        margin-top: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: .6rem;
+    }
+}
+
+/***** Footer Styling *****/
+
+.footer-container {
+    width: 100%;
+    padding: 8px;
+    background-color: #cacae7;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-container footer {
+    width: 70%;
+}
+
+.footer-container footer p {
+    margin: 0;
+}
+
+.footer-container footer p:first-of-type {
+    font-family: 'Work Sans', sans-serif;
+    color: rgba(255, 23, 23, 0.700);
+    font-size: .9rem;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.footer-container footer p:last-of-type {
+    font-family: 'Work Sans', sans-serif;
+    font-size: .75rem;
+    color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 4px;
+}
+
+/***** Mobile Styling for Footer *****/
+@media (max-width: 700px) {
+    .footer-container footer {
+        width: 100%;
+    }
+
+    .footer-container footer p:first-of-type {
+        font-size: .75rem;
+    }
+
+    .footer-container footer p:last-of-type {
+        font-size: .67rem;
+    }
+}

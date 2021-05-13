@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assests/css/information.css">
+    <title>Bed Status</title>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="heading-container">
+        <h1 class="main-heading">COVID-19 Beds Availability Status in <%= hospitalList[0].DISTRICT %> </h1>
+    </div>
+
+    <div class="table-container">
+        <div class="back-btn-container">
+            <a href="/">Change City</a>
+        </div>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>Hospital Name</th>
+                    <th class="desktop-column">General Beds</th>
+                    <th class="desktop-column">Oxygen Beds</th>
+                    <th class="desktop-column">ICU Beds</th>
+                    <th class="desktop-column">Ventilator Beds</th>
+                    <th class="mobile-column">Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% hospitalList.forEach(hospital => { %>
+                <tr>
+                    <th>
+                        <div>
+                            <p class="hospital-name"><%=hospital.HOSPITAL_NAME%></p>
+                            <div class="hospital-information">
+                                <a href="tel:<%= hospital.HOSPITAL_HELPLINE_NO %>" class="call-detail">Call <i
+                                        class="fa fa-phone-alt"></i></a>
+                                <a href="<%= hospital.LOCATION %> " class="location">Location <i
+                                        class="fa fa-map-marker-alt"></i></a>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="desktop-column"><span
+                            class="<%= hospital.GENERAL_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.GENERAL_BEDS_AVAILABLE %>
+                        </span>
+                    </td>
+                    <td class="desktop-column"><span
+                            class="<%= hospital.OXYGEN_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.OXYGEN_BEDS_AVAILABLE %></span>
+                    </td>
+                    <td class="desktop-column"><span
+                            class="<%= hospital.ICU_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.HAS_ICU_BEDS ? hospital.ICU_BEDS_AVAILABLE : "N/A" %></span>
+                    </td>
+                    <td class="desktop-column"><span
+                            class="<%= hospital.VENTILATOR_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.HAS_VENTILATORS ? hospital.VENTILATOR_BEDS_AVAILABLE : "N/A"%></span>
+                    </td>
+                    <td class="mobile-column">
+                        <table class="mini-table">
+                            <tr>
+                                <td>General Beds</td>
+                                <td><span
+                                        class="<%= hospital.GENERAL_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.GENERAL_BEDS_AVAILABLE %></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Oxygen Beds</td>
+                                <td><span
+                                        class="<%= hospital.OXYGEN_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.OXYGEN_BEDS_AVAILABLE %></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ICU Beds</td>
+                                <td><span
+                                        class="<%= hospital.ICU_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.HAS_ICU_BEDS ? hospital.ICU_BEDS_AVAILABLE : "N/A" %></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ventilator Beds</td>
+                                <td><span
+                                        class="<%= hospital.VENTILATOR_BEDS_AVAILABLE == 0 ? "bg-red" : "bg-blue" %>"><%= hospital.HAS_VENTILATORS ? hospital.VENTILATOR_BEDS_AVAILABLE : "N/A"%></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="footer-container">
+        <footer>
+            <p>Disclaimer !</p>
+            <p>We are using data provided by the government bodies. The actual number of available beds and vaccines
+                may differ. Please contact the hospital prior visiting. This site holds no responsibility for any
+                mismatches in data. </p>
+        </footer>
+    </div>
+</body>
+
+</html>
